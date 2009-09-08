@@ -1,0 +1,9 @@
+h1. Flash Helper
+
+p. Introduction goes here.
+
+h2. Example
+
+p. Example goes here.
+
+p. Copyright (c) 2009 "Michael Deering":http://mdeering.com, released under the MIT license
