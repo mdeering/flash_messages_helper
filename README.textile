@@ -37,6 +37,8 @@ ActionView::Base.flash_message_id_proc = lambda {|key| "#{key}-message"}</pre>
 
 A _error_ message will now displayed with the dom element id of _error-message_ rather then _flash-error_ throughout the application
 
+<pre><div class="error" id="error-message">There was an error!</div></pre>
+
 h3. Changing the default class of the flash elements
 
 By default the class of the flash message element will come through as _error-type_
@@ -52,6 +54,8 @@ To change this you can pass set a lambda that will get called with the key of th
 ActionView::Base.flash_message_class_proc = lambda {|key| "#{key} hiddable"}</pre>
 
 A _error_ message will now displayed with the dom element class of _error hiddable_ rather then _error_ throughout the application
+
+<pre><div class="error hiddable" id="flash-error">There was an error!</div></pre>
 
 h3. Changing the default html tag type of the flash elements
 
