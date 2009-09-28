@@ -1,9 +1,15 @@
-h1. Flash Helper
+h1. Flash Messages Helper
 
 p. Introduction goes here.
+
+h2. Installation
+
+p. Installation Notes
 
 h2. Example
 
 p. Example goes here.
 
-p. Copyright (c) 2009 "Michael Deering":http://mdeering.com, released under the MIT license
+h2. Credits
+
+p. Copyright (c) 2009 "Michael Deering(Ruby on Rails Development Edmonton)":http://mdeering.com, released under the MIT license
