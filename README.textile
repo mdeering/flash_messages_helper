@@ -51,11 +51,11 @@ By default the class of the flash message element will come through as _error-ty
 To change this you can pass set a lambda that will get called with the key of the message type.
 
 <pre># config/initializers/flash_messages_helper_settings.rb
-ActionView::Base.flash_message_class_proc = lambda {|key| "#{key} hiddable"}</pre>
+ActionView::Base.flash_message_class_proc = lambda {|key| "#{key} hideable"}</pre>
 
-A _error_ message will now displayed with the dom element class of _error hiddable_ rather then _error_ throughout the application
+A _error_ message will now displayed with the dom element class of _error hideable rather then _error_ throughout the application
 
-<pre><div class="error hiddable" id="flash-error">There was an error!</div></pre>
+<pre><div class="error hideable" id="flash-error">There was an error!</div></pre>
 
 h3. Changing the default html tag type of the flash elements
 
