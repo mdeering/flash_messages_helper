@@ -68,6 +68,12 @@ With the above setting flash messages will be wrapped inside of a paragraph tag 
 
 <pre><p class="error" id="flash-error">There was an error!</p></pre>
 
+h2. TODOs
+
+* secure option:  true/(false)
+* rating option: (G), PG, R or X
+* filetype option: gif, jpg or (png)
+
 h2. Credits
 
 p. Copyright (c) 2009 "Michael Deering(Ruby on Rails Development Edmonton)":http://mdeering.com, released under the MIT license
