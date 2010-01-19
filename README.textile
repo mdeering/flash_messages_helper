@@ -2,6 +2,14 @@ h1. Flash Messages Helper
 
 Ruby on Rails view helper for displaying html flash messages in your Rails applications.
 
+h2.  Install as a Ruby Gem
+
+<pre>sudo gem install flash_messages_helper</pre>
+
+p. Then add the following line to your _environment.rb_
+
+<pre>config.gem 'flash_messages_helper'</pre>
+
 h2. Installation as a Ruby on Rails Plugin
 
 The traditional way.
