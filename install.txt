@@ -1,0 +1,12 @@
+-----------------------------------------------------------------------
+  Flash Messages Helper:
+
+  Thank you for using Flash Messages Helper.  You will find full
+  documentation on usage and configuration options here:
+  http://github.com/mdeering/flash_messages_helper
+
+  All comments, suggestions, and pull requests are welcome.
+
+  Cheers,
+  Michael Deering http://mdeering.com
+-----------------------------------------------------------------------

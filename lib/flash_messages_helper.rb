@@ -25,3 +25,5 @@ module FlashMessagesHelper
   end
 
 end
+
+ActionView::Base.send(:include, FlashMessagesHelper)
