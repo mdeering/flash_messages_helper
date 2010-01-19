@@ -12,18 +12,11 @@ p. Then add the following line to your _environment.rb_
 
 h2. Installation as a Ruby on Rails Plugin
 
-The traditional way.
 <pre>./script/plugin install git://github.com/mdeering/flash_messages_helper.git</pre>
-
-or the old-school but still c00l way!
-<pre>piston import git://github.com/mdeering/flash_messages_helper.git vendor/plugins/flash_messages_helper</pre>
-
-or for all you hip gitsters.
-<pre>git submodule add git://github.com/mdeering/flash_messages_helper.git vendor/plugins/flash_messages_helper git submodule init</pre>
 
 h2. Usage
 
-Once you have installed it as a plugin for your rails app usage is simple. Just call the flash_messages function within you Rails layout or view file
+Once you have installed it as a plugin/gem in your rails app usage is simple. Just call the flash_messages function within you Rails layout or view file
 
 <pre>flash_messages</pre>
 
@@ -75,12 +68,6 @@ ActionView::Base.flash_message_tag = :p</pre>
 With the above setting flash messages will be wrapped inside of a paragraph tag rather then a div.
 
 <pre><p class="error" id="flash-error">There was an error!</p></pre>
-
-h2. TODOs
-
-* secure option:  true/(false)
-* rating option: (G), PG, R or X
-* filetype option: gif, jpg or (png)
 
 h2. Credits
 
