@@ -14,9 +14,9 @@ module FlashMessagesHelper
     def flash_messages(options = {})
       ret = []
       flash.each do |key, value|
-        ret << content_tag(ActionView::Base.flash_message_tag, value, {
-            :class => ActionView::Base.flash_message_class_proc.call(key),
-            :id    => ActionView::Base.flash_message_id_proc.call(key)
+        ret << content_tag(flash_message_tag, value, {
+            :class => flash_message_class_proc.call(key),
+            :id    => flash_message_id_proc.call(key)
           }.merge(options)
         )
       end
