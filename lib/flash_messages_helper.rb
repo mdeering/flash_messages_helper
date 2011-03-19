@@ -19,35 +19,26 @@ module FlashMessagesHelper
    end
 
   def self.included(target)
-    # target.cattr_accessor :flash_message_class_proc
-    # target.flash_message_class_proc = lambda { |key| "#{key}" }
-    # target.cattr_accessor :flash_message_id_proc
-    # target.flash_message_id_proc = lambda { |key| "flash-#{key}" }
-    # target.cattr_accessor :flash_message_tag
-    # target.flash_message_tag     = :div
     target.extend ClassMethods
     target.send :include, InstanceMethods
   end
 
   module ClassMethods
-    def flash_message_class_proc=(value)
-      # TODO: Deprication Warning!
-      FlashMessagesHelper.configure do |c|
-        c.css_class = value
+
+    # Deprications
+    {
+      :flash_message_class_proc => :css_class,
+      :flash_message_id_proc    => :dom_id,
+      :flash_message_tag        => :wrapper
+    }.each do |old_method, new_method|
+      define_method "#{old_method}=" do |value|
+        ActiveSupport::Deprecation.warn "FlashMessagesHelper.#{old_method} has been removed in favor of #{new_method}.  Please refer to the README https://github.com/mdeering/flash_messages_helper for the configuration DSL"
+        FlashMessagesHelper.configure do |config|
+          config.send("#{new_method}=", value)
+        end
       end
     end
-    def flash_message_id_proc=(value)
-      # TODO: Deprication Warning!
-      FlashMessagesHelper.configure do |c|
-        c.dom_id = value
-      end
-    end
-    def flash_message_tag=(value)
-      # TODO: Deprication Warning!
-      FlashMessagesHelper.configure do |c|
-        c.wrapper = value
-      end
-    end
+
   end
 
   module InstanceMethods
@@ -60,7 +51,8 @@ module FlashMessagesHelper
           }.merge(options)
         )
       end
-      return ret.join("\n")
+      return_string = ret.join("\n")
+      return return_string.respond_to?(:html_safe) ? return_string.html_safe : return_string
     end
   end
 

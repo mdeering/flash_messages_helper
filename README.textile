@@ -71,4 +71,4 @@ With the above setting flash messages will be wrapped inside of a paragraph tag 
 
 h2. Credits
 
-p. Copyright (c) 2009 "Michael Deering(Ruby on Rails Development Edmonton)":http://mdeering.com, released under the MIT license
+p. Copyright (c) 2011 "Michael Deering(Ruby on Rails Development Edmonton)":http://mdeering.com, released under the MIT license
