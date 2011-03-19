@@ -5,8 +5,8 @@ A configurable Ruby on Rails view helper for displaying html flash messages in y
 h2. Recent Changes
 
 * 0.2.0
-* Added a proper configuration DSL
-* html_safe called on the output if available
+** Added a proper configuration DSL
+** html_safe called on the output if available
 
 h2.  Install as a Ruby Gem
 
@@ -20,8 +20,8 @@ p. Then add the following line to your _environment.rb_
 
 h3. Rails 3
 
-<pre># Gemfile
-gem 'flash_messages_helper'</pre>
+p. Add the following to your _Gemfile_
+<pre>gem 'flash_messages_helper'</pre>
 
 
 h2. Installation as a Ruby on Rails Plugin
@@ -32,7 +32,7 @@ h2. Usage
 
 Once you have installed it as a plugin/gem in your rails app usage is simple. Just call the flash_messages function within you Rails view file
 
-<pre>flash_messages</pre>
+<pre>= flash_messages</pre>
 
 h2. Configuration
 
