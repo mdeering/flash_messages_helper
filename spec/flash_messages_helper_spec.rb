@@ -19,13 +19,13 @@ describe FlashMessagesHelper do
   end
 
   it 'will return a div with the error message' do
-    @controller.stub!(:flash).and_return({:error => 'There was an error'})
+    @controller.stub!(:flash).and_return({ :error => 'There was an error' })
     @view.flash_messages.should == "<div class=\"error\" id=\"flash-error\">There was an error</div>"
   end
 
   {
-    :flash_message_class_proc => lambda { |key| "#{key}-message hiddable"},
-    :flash_message_id_proc    => lambda { |key| "flash-#{key}-message"},
+    :flash_message_class_proc => lambda { |key| "#{key}-message hiddable" },
+    :flash_message_id_proc    => lambda { |key| "flash-#{key}-message" },
     :flash_message_tag        => :p
   }.each do |singleton_variable, value|
     it "should give deprication warnings for 0.1.0 usage but still set configuration points" do
@@ -41,16 +41,15 @@ describe FlashMessagesHelper do
 
   it 'will return a p with the error message and the defaults set differently' do
     FlashMessagesHelper.configuration.wrapper = :p
-    @controller.stub!(:flash).and_return({:error => 'There was an error'})
+    @controller.stub!(:flash).and_return({ :error => 'There was an error' })
     @view.flash_messages.should == "<p class=\"error\" id=\"flash-error\">There was an error</p>"
   end
 
   it 'will still honor the html options passed in' do
-    @controller.stub!(:flash).and_return({:error => 'There was an error'})
+    @controller.stub!(:flash).and_return({ :error => 'There was an error' })
     @view.flash_messages(:class => 'my-class').should == "<div class=\"my-class\" id=\"flash-error\">There was an error</div>"
   end
 
-  it 'will call html_safe on the return string if available' do
-  end
+  it 'will call html_safe on the return string if available'
 
 end
