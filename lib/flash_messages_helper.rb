@@ -13,11 +13,13 @@ module FlashMessagesHelper
   end
 
   class Configuration
-     attr_accessor :css_class, :dom_id, :wrapper
+     attr_accessor :css_class, :dom_id, :wrapper, :prefix_html, :sufix_html
      def initialize
-       @css_class = lambda { |key| "#{key}" }
-       @dom_id    = lambda { |key| "flash-#{key}" }
-       @wrapper   = :div
+       @css_class   = lambda { |key| "#{key}" }
+       @dom_id      = lambda { |key| "flash-#{key}" }
+       @sufix_html  = ""
+       @prefix_html = ""
+       @wrapper     = :div
      end
    end
 
@@ -48,10 +50,12 @@ module FlashMessagesHelper
     def flash_messages(options = {})
       ret = []
       flash.each do |key, value|
+        value = [FlashMessagesHelper.configuration.prefix_html, value, FlashMessagesHelper.configuration.sufix_html].join('')
         ret << content_tag(FlashMessagesHelper.configuration.wrapper, value, {
             :class => FlashMessagesHelper.configuration.css_class.call(key),
             :id    => FlashMessagesHelper.configuration.dom_id.call(key)
-          }.merge(options)
+            }.merge(options),
+            false
         )
       end
       return_string = ret.join("\n")
