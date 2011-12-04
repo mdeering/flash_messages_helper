@@ -13,11 +13,11 @@ module FlashMessagesHelper
   end
 
   class Configuration
-     attr_accessor :css_class, :dom_id, :wrapper, :prefix_html, :sufix_html
+     attr_accessor :css_class, :dom_id, :wrapper, :prefix_html, :suffix_html
      def initialize
        @css_class   = lambda { |key| "#{key}" }
        @dom_id      = lambda { |key| "flash-#{key}" }
-       @sufix_html  = ""
+       @suffix_html  = ""
        @prefix_html = ""
        @wrapper     = :div
      end
@@ -50,7 +50,7 @@ module FlashMessagesHelper
     def flash_messages(options = {})
       ret = []
       flash.each do |key, value|
-        value = [FlashMessagesHelper.configuration.prefix_html, value, FlashMessagesHelper.configuration.sufix_html].join('')
+        value = [FlashMessagesHelper.configuration.prefix_html, value, FlashMessagesHelper.configuration.suffix_html].join('')
         ret << content_tag(FlashMessagesHelper.configuration.wrapper, value, {
             :class => FlashMessagesHelper.configuration.css_class.call(key),
             :id    => FlashMessagesHelper.configuration.dom_id.call(key)

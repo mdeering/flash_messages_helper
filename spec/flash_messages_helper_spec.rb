@@ -47,7 +47,7 @@ describe FlashMessagesHelper do
 
   it "will return error message with external text" do
     FlashMessagesHelper.configuration.prefix_html = "<a href='#' class='close'>x</a>"
-    FlashMessagesHelper.configuration.sufix_html = "<a href='#' class='close'>x</a>"
+    FlashMessagesHelper.configuration.suffix_html = "<a href='#' class='close'>x</a>"
     @controller.stub!(:flash).and_return({ :error => 'There was an error' })
     @view.flash_messages.should == "<div class=\"error\" id=\"flash-error\"><a href='#' class='close'>x</a>There was an error<a href='#' class='close'>x</a></div>"
   end
