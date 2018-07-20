@@ -1,7 +1,20 @@
-source 'http://rubygems.org'
+# frozen_string_literal: true
 
-group :development, :test do
-  gem 'jeweler'
-  gem 'rails', '<3.0'
-  gem 'rspec', '<2.0'
+source 'https://rubygems.org'
+
+gem 'rails', require: false
+
+group :development do
+  gem 'guard-bundler',   require: false
+  gem 'guard-inch',      require: false
+  gem 'guard-rspec',     require: false
+  gem 'guard-rubocop',   require: false
+  gem 'guard-yardstick', require: false
 end
+
+group :test do
+  gem 'rspec',          require: false
+  gem 'rubocop',        require: false
+end
+
+gemspec

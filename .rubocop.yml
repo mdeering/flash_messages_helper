@@ -1,0 +1,11 @@
+EmptyLinesAroundBlockBody:
+  Enabled: false
+
+EmptyLinesAroundClassBody:
+  Enabled: false
+
+EmptyLinesAroundModuleBody:
+  Enabled: false
+
+LineLength:
+  Max: 115
