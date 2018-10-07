@@ -13,8 +13,9 @@ group :development do
 end
 
 group :test do
-  gem 'rspec',          require: false
-  gem 'rubocop',        require: false
+  gem 'rspec',     require: false
+  gem 'rubocop',   require: false
+  gem 'yardstick', require: false
 end
 
 gemspec

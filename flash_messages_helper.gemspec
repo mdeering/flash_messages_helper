@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.authors     = ['Michael Deering']
   s.email       = ['mdeering@mdeering.com']
   s.homepage    = 'https://github.com/mdeering/flash_messages_helper'
-  s.summary     = 'A configurable Ruby on Rails view helper for displaying html flash messages in your Rails applications.'
+  s.summary     = 'A configurable Ruby on Rails view helper for displaying html flash messages in your Rails.'
 
   s.files = Dir['{lib}/**/*']
   s.require_paths = ['lib']
