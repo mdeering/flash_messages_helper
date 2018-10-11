@@ -36,7 +36,7 @@ end
 #  * zeus: 'zeus rspec' (requires the server to be started separately)
 #  * 'just' rspec: 'rspec'
 
-guard :rspec, cmd: 'bundle exec rspec' do
+guard :rspec, all_on_start: true, cmd: 'bundle exec rspec' do
   require 'guard/rspec/dsl'
   dsl = Guard::RSpec::Dsl.new(self)
 
@@ -58,17 +58,7 @@ guard :rubocop do
   watch(%r{(?:.+/)?\.rubocop(?:_todo)?\.yml$}) { |m| File.dirname(m[0]) }
 end
 
-guard :inch do
-  watch(/.+\.rb/)
-end
-
-# Options to guard-yardstick
-# all_on_start: true
-# path: ['app', 'config', 'lib']
-guard :yardstick do
-  # Typical Rails setup
-  # Set path option to ['app', 'config', 'lib']
-  # watch(%r{^app\/(.+)\.rb$})
-  # watch(%r{^config\/initializers\/(.+)\.rb$})
+require 'mdeering/style'
+guard :yardstick, config: Mdeering::Style.yardstick do
   watch(%r{^lib\/(.+)\.rb$})
 end
